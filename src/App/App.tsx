@@ -7,6 +7,7 @@ import {
   useState,
 } from 'react'
 import './app.scss'
+import './nullstyles.scss'
 const App = () => {
   const [arrUserPoint, setPoint]: [
     point[][],
@@ -25,10 +26,11 @@ const App = () => {
   }
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const contextRef: { current: CanvasRenderingContext2D | null } = useRef(null)
+  //TODO: rescale function
   useEffect(() => {
     console.log('window.innerWidth', window.innerWidth)
     const canvas = canvasRef.current as HTMLCanvasElement
-    canvas.width = window.innerWidth - 150
+    canvas.width = window.innerWidth - window.innerWidth / 1000
     canvas.height = window.innerHeight - 150
     const context = canvas.getContext('2d') as CanvasRenderingContext2D
     context.lineCap = 'round'
@@ -169,8 +171,11 @@ const App = () => {
       return val
     })
   }
+  function clear() {
+    contextRef.current?.clearRect(0, 0, window.innerWidth, window.innerHeight)
+  }
   return (
-    <>
+    <div>
       <canvas
         onMouseDown={(e) => {
           setNewPoint(e)
@@ -178,8 +183,18 @@ const App = () => {
         }}
         ref={canvasRef}
       />
-      <button onClick={draw}>build MVO</button>
-    </>
+      <div
+        style={{
+          display: 'flex',
+          width: '60vw',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}
+      >
+        <button onClick={draw}>build MVO</button>
+        <button onClick={clear}>clear</button>
+      </div>
+    </div>
   )
 }
 

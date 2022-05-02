@@ -1,3 +1,24 @@
 canvas {
   border: 0.1vh solid red;
 }
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+button {
+  color: chartreuse;
+  margin-top: 2vh;
+  font-size: 5vh;
+  width: 25vw;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 0.7091211484593838) 7%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  border-radius: 5vh;
+  box-shadow: calc(0.2vh + 0.2vw) calc(0.2vh + 0.2vw) calc(0.3vh + 0.3vw) 0px
+    rgba(34, 60, 80, 0.2);
+}
