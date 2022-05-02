@@ -44,35 +44,6 @@ const App = () => {
     id: number
     wasChange: boolean
   }
-  const arrPoint: point[][] = [
-    [
-      { x: 2, y: 1, id: 0, wasChange: false },
-      { x: 3, y: 3, id: 0, wasChange: false },
-      { x: 3, y: 1, id: 0, wasChange: false },
-      { x: 1, y: 4, id: 0, wasChange: false },
-      { x: 4, y: 1, id: 0, wasChange: false },
-      { x: 3, y: 2, id: 0, wasChange: false },
-      { x: 1, y: 2, id: 0, wasChange: false },
-      { x: 1, y: 3, id: 0, wasChange: false },
-      { x: 2, y: 3, id: 0, wasChange: false },
-      { x: 2, y: 2, id: 0, wasChange: false },
-      { x: 3, y: 4, id: 0, wasChange: false },
-      { x: 1, y: 1, id: 0, wasChange: false },
-      { x: 2, y: 4, id: 0, wasChange: false },
-      { x: 4, y: 3, id: 0, wasChange: false },
-      { x: 4, y: 4, id: 0, wasChange: false },
-      { x: 4, y: 2, id: 0, wasChange: false },
-    ],
-    [
-      { x: 7, y: 27, id: 1, wasChange: false },
-      { x: 6, y: 27, id: 1, wasChange: false },
-      { x: 5, y: 27, id: 1, wasChange: false },
-      { x: 4, y: 27, id: 1, wasChange: false },
-      { x: 3, y: 27, id: 1, wasChange: false },
-      { x: 2, y: 27, id: 1, wasChange: false },
-      { x: 1, y: 27, id: 1, wasChange: false },
-    ],
-  ]
   function sortArrDownLeft(arr: point[][]) {
     return arr.map((value, index, arr) => {
       const currentArr = [...value]
