@@ -27,6 +27,8 @@ const App = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const contextRef: { current: CanvasRenderingContext2D | null } = useRef(null)
   //TODO: rescale function
+  //TODO: growth figure
+  //TODO: mutate figure
   useEffect(() => {
     console.log('window.innerWidth', window.innerWidth)
     const canvas = canvasRef.current as HTMLCanvasElement
@@ -158,8 +160,10 @@ const App = () => {
     }
   }
   function draw() {
-    mainPoint(arrUserPoint)
-    CleanArr()
+    if (arrUserPoint[0].length > 1) {
+      mainPoint(arrUserPoint)
+      CleanArr()
+    }
   }
   function drawPoint() {
     arrUserPoint.forEach((val) => {
