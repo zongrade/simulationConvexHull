@@ -162,7 +162,8 @@ const App = () => {
   function drawPoint() {
     arrUserPoint.forEach((val) => {
       val.forEach((value) => {
-        contextRef.current?.fillRect(value.x, value.y, 10, 10)
+        if (contextRef.current) contextRef.current.fillStyle = 'orange'
+        contextRef.current?.fillRect(value.x - 5, value.y - 5, 10, 10)
         return value
       })
       return val
