@@ -6,7 +6,7 @@ import {
   useRef,
   useState,
 } from 'react'
-
+import './app.scss'
 const App = () => {
   const [arrUserPoint, setPoint]: [
     point[][],
